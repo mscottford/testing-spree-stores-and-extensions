@@ -584,7 +584,9 @@ easier time tracking down when things went awry.
 
 !SLIDE
 
-## Demo
+## Writing an Acceptance Test
+
+### Demo
 
 http://github.com/mscottford/sample-store
 
@@ -598,7 +600,9 @@ Example scenario: Adding a method to `Spree::Product`.
 
 !SLIDE
 
-## Demo
+## Writing an Integration Test
+
+### Demo
 
 http://github.com/mscottford/sample-store
 
@@ -658,7 +662,9 @@ Scenario: Special Pricing
 
 !SLIDE
 
-## Demo
+## Writing an Acceptance Test
+
+### Demo
 
 http://github.com/mscottford/spree_sample_extension
 
@@ -672,7 +678,9 @@ Scenario: Special pricing for select products
 
 !SLIDE
 
-## Demo
+## Writing an Integration Test
+
+### Demo
 
 http://github.com/mscottford/spree_sample_extension
 
@@ -682,7 +690,17 @@ branch: integration-test
 
 ## Writing a unit test
 
-Scenario: TODO
+Scenario: Adding a helper to remove duplication
+
+!SLIDE
+
+## Writing a unit test
+
+### Demo
+
+http://github.com/mscottford/spree_sample_extension
+
+branch: unit-test
 
 !SLIDE left
 
