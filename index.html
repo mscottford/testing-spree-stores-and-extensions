@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>testing-spree-store-and-extensions</title>
+    <meta charset='utf-8' />
+    <meta content='width=1024, user-scalable=no' name='viewport' />
+    <!-- deck.js's core css -->
+    <link href="deck.js/core/deck.core.css" rel="stylesheet" type="text/css"/>
+    <!-- deck.js extension CSS files -->
+    <link href="deck.js/extensions/codemirror/deck.codemirror.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/goto/deck.goto.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/hash/deck.hash.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/menu/deck.menu.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/navigation/deck.navigation.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/scale/deck.scale.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/status/deck.status.css" rel="stylesheet" type="text/css"/>
+    <!-- all css in the css dir: Keydown CSS, your custom CSS, and themes from deck.js -->
+    <link href="css/keydown.css" rel="stylesheet" type="text/css"/>
+    <link href="css/default.css" rel="stylesheet" type="text/css"/>
+    <link href="css/horizontal-slide.css" rel="stylesheet" type="text/css"/>
+    <link href="css/swiss.css" rel="stylesheet" type="text/css"/>
+    <link href="css/testing-spree-store-and-extensions.css" rel="stylesheet" type="text/css"/>
+    <!-- Modernizr (provided for legacy browsers) -->
+    <script src="deck.js/support/modernizr.custom.js" type="text/javascript"></script>
+  </head>
+  <body class='deck-container keydown'>
+    <section class='slide title'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Testing Spree Stores and Extensions</h1>
+
+<h2>M. Scott Ford</h2>
+
+<p>Software Engineer<br/>
+Cardagin Networks</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h1>About me</h1>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <p><img alt='x-31' class='full' src='images/x-31-smaller.jpg' /></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <p><video width="704" height="480" controls="controls">
+            <source src="movies/EM-0036-05.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <p><img alt='x-31' class='full' src='images/x-31-smaller.jpg' /></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>If my code failed</h1>
+
+<h1>people could die</h1>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Structure of the talk</h1>
+
+<p>Four parts:</p>
+
+<ol>
+<li>Why test?</li>
+<li>Testing best practices</li>
+<li>Testing Spree stores</li>
+<li>Testing Spree extensions</li>
+</ol>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide title'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h1>Why Test?</h1>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Why is Testing Important?</h2>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Safety Critical vs. Mission Critical</h2>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h3>Safety Critical</h3>
+
+<p>If my code fails, people could die.</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h3>Safety Critical</h3>
+          
+          <h4>Aircraft and Spacecraft</h4>
+          
+          <p><img alt='rocket' src='images/rocket-smaller.jpg'/></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h3>Safety Critical</h3>
+          
+          <h4>Emergency Response Systems</h4>
+          
+          <p><img alt='ambulance' src='images/ambulance.jpg'/></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h3>Safety Critical</h3>
+          
+          <h4>Passenger Rail</h4>
+          
+          <p><img alt='light rail' src='images/light-rail.jpg'/></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h3>Mission Critical</h3>
+
+<p>If my code fails, business is impacted.</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h3>Mission Critical</h3>
+          
+          <h4>Mars Science Lab Landing</h4>
+          
+          <p><img alt='mars rover landing' src='images/mars-rover.jpg'/></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h3>Mission Critical</h3>
+          
+          <h4>Stock Trading Software</h4>
+          
+          <p><img alt='stock exchange' src='images/stock-exchange.jpg'/></p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h3>Mission Critical</h3>
+
+<h4>E-Commerce</h4>
+
+<p><img alt='spree logo' src='images/spree-logo.jpg'/></p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Why Don't We Test More Often?</h2>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Why don't we test more often?</h2>
+          
+          <h3>"Testing is frustrating."</h3>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Why don't we test more often?</h2>
+          
+          <h3>"I don't see the benefit"</h3>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Why don't we test more often?</h2>
+          
+          <h3>"I don't have time"</h3>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h1>Why Test?</h1>
+          
+          <h2>Summary</h2>
+          
+          <ul>
+          <li>Why is Testing Important?</li>
+          <li>Safety critical vs. Mission critical</li>
+          <li>Why Don't We Test More Often?</li>
+          </ul>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h1>Best Practices</h1>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Test First vs. Test Last</h2>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Different Levels of Testing</h2>
+          
+          <p>These are the kinds of tests that this talk is going to cover</p>
+          
+          <ul>
+          <li>Acceptance</li>
+          <li>Integration</li>
+          <li>Unit</li>
+          </ul>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Other Kinds of Tests</h2>
+          
+          <p>These tests are important, but we don’t have enough time to go into them here.</p>
+          
+          <ul>
+          <li>Security</li>
+          <li>Performance</li>
+          <li>Exploratory</li>
+          </ul>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Properties of a Good Test</h2>
+          
+          <ul>
+          <li>Reads like a story (beginning, middle, and end)</li>
+          <li>Easy to read and understand what’s being tested</li>
+          </ul>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Tool Choice</h2>
+          
+          <p>Cucumber vs. RSpec vs. Test::Unit vs. others</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Tips for Consultants</h2>
+          
+          <ul>
+          <li>Don’t list testing as on giant line item in your estimate</li>
+          <li>Don’t make testing optional</li>
+          <li>Let your client's risk tolerance dictate how much you test</li>
+          </ul>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h1>Best Practices</h1>
+          
+          <h2>Summary</h2>
+          
+          <ul>
+          <li>Test first vs. test last</li>
+          <li>Properties of a good test</li>
+          <li>Different levels of testing</li>
+          <li>Tool choice</li>
+          <li>Tips for consultants</li>
+          </ul>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Testing Spree Stores</h1>
+
+<p>http://github/mscottford/sample-store</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Getting Started</h1>
+
+<p>Create a new spree store project with RSpec and Capybara</p>
+
+<p>http://github.com/mscottford/sample-store</p>
+
+<p>branch: master</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Create a Rails App</h2>
+    
+    <p><textarea class='code' display='none' mode='bash'>$ gem install rails -v 3.2.8&#x000A;$ rails _3.2.8_ new sample-store --skip-test-unit</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Add Spree</h2>
+
+<p><textarea class='code' display='none' mode='bash'>$ echo "gem 'spree', '~> 1.1.0'" >> Gemfile&#x000A;$ bundle update&#x000A;$ rails g spree:install&#x000A;$ echo "/public/spree" >> .gitignore</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Add RSpec and Capybara</h2>
+
+<p><code>Gemfile</code>:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>group :test do&#x000A;  gem 'rspec-rails'&#x000A;  gem 'capybara'&#x000A;  gem 'database_cleaner'&#x000A;  gem 'factory_girl'&#x000A;  gem 'faker'&#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Add RSpec and Capybara</h2>
+    
+    <p><textarea class='code' display='none' mode='bash'>$ bundle update&#x000A;$ rails g rspec:install</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Configure RSpec</h2>
+
+<p>Add to <code>spec_helper.rb</code>, right before <code>RSpec.configure</code>:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>require 'database_cleaner'&#x000A;require 'spree/core/testing_support/factories'&#x000A;require 'spree/core/testing_support/env'&#x000A;require 'spree/core/testing_support/controller_requests'&#x000A;require 'spree/core/url_helpers'&#x000A;require 'paperclip/matchers'</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Configure RSpec</h2>
+
+<p>In <code>spec_helper.rb</code>, change:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>config.use_transactional_fixtures = true</textarea>
+</p>
+
+<p>to:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>config.use_transactional_fixtures = false</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Configure RSpec</h2>
+
+<p>In <code>spec_helper.rb</code> inside <code>RSpec.configure</code> block, add:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>config.before(:each) do&#x000A;  if example.metadata[:js]&#x000A;    DatabaseCleaner.strategy = :truncation, {&#x000A;      :except => [&#x000A;        'spree_countries', 'spree_zones',&#x000A;        'spree_zone_members', 'spree_states',&#x000A;        'spree_roles' ]}&#x000A;  else&#x000A;    DatabaseCleaner.strategy = :transaction&#x000A;  end&#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Configure RSpec</h2>
+
+<p>In <code>spec_helper.rb</code> inside <code>RSpec.configure</code> block, add:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>config.before(:each) do&#x000A;  DatabaseCleaner.start&#x000A;end&#x000A;&#x000A;config.after(:each) do&#x000A;  DatabaseCleaner.clean&#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Configure RSpec</h2>
+
+<p>In <code>spec_helper.rb</code> inside <code>RSpec.configure</code> block, add:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>config.include FactoryGirl::Syntax::Methods&#x000A;config.include Spree::Core::UrlHelpers&#x000A;config.include Spree::Core::TestingSupport::ControllerRequests</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>A simple test to make sure it's working</h2>
+
+<p><code>spec/requests/home_spec.rb</code>:</p>
+
+<p><textarea class='code' display='none' mode='ruby'>require 'spec_helper'&#x000A;&#x000A;describe 'home' do&#x000A;  it 'should load home page' do&#x000A;    visit '/'&#x000A;    page.should have_content('Home')&#x000A;  end&#x000A;end</textarea>
+</p>
+
+<p><textarea class='code' display='none' mode='shell'>$ bundle exec rake db:test:prepare&#x000A;$ be rspec</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Writing an Acceptance Test</h2>
+          
+          <p>Example scenario: related products</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Writing an Acceptance Test</h2>
+          
+          <h3>Demo</h3>
+          
+          <p>http://github.com/mscottford/sample-store</p>
+          
+          <p>branch: acceptance-test</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Writing an Integration Test</h2>
+
+<p>Example scenario: Adding a method to <code>Spree::Product</code>.</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Writing an Integration Test</h2>
+          
+          <h3>Demo</h3>
+          
+          <p>http://github.com/mscottford/sample-store</p>
+          
+          <p>branch: integration-test</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Writing a unit test</h2>
+          
+          <p>Example scenario: Adding a helper method</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Testing Spree Stores</h1>
+
+<h2>Summary</h2>
+
+<p>http://github.com/mscottford/sample-store</p>
+
+<ul>
+<li>Getting started - branch: master</li>
+<li>Acceptance test - branch: acceptance-test</li>
+<li>Integration test - branch: integration-test</li>
+<li>Unit test - branch: unit-test</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Testing Spree Extensions</h1>
+
+<p>http://github.com/mscottford/spree_sample_extension</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Getting Started</h2>
+
+<p>http://github.com/mscottford/spree_sample_extension</p>
+
+<p>branch: master</p>
+
+<p><textarea class='code' display='none' mode='shell'>$ gem install spree_cmd&#x000A;$ spree extension sample_extension</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Writing an Acceptance Test</h2>
+          
+          <p>Scenario: Special Pricing</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Writing an Acceptance Test</h2>
+
+<h3>Demo</h3>
+
+<p>http://github.com/mscottford/spree_sample_extension</p>
+
+<p>branch: acceptance-test</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Writing an Integration Test</h2>
+          
+          <p>Scenario: Special pricing for select products</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Writing an Integration Test</h2>
+
+<h3>Demo</h3>
+
+<p>http://github.com/mscottford/spree_sample_extension</p>
+
+<p>branch: integration-test</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h2>Writing a unit test</h2>
+          
+          <p>Scenario: Adding a helper to remove duplication</p>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Writing a unit test</h2>
+
+<h3>Demo</h3>
+
+<p>http://github.com/mscottford/spree_sample_extension</p>
+
+<p>branch: unit-test</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Testing Spree Extensions</h1>
+
+<h2>Summary</h2>
+
+<p>http://github.com/mscottford/spree_sample_extension</p>
+
+<ul>
+<li>Getting started - branch: master</li>
+<li>Acceptance test - branch: acceptance-test</li>
+<li>Integration test - branch: integration-test</li>
+<li>Unit test - branch: unit-test</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Testing Spree Stores and Extensions</h1>
+
+<h2>Summary</h2>
+
+<ul>
+<li>Why Test?</li>
+<li>Best Practices</li>
+<li>Testing Spree Stores</li>
+<li>Testing Spree Extensions</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Additional resources</h1>
+
+<ul>
+<li>Read the Spree RSpec tests<br/>
+<a href="http://github.com/spree/spree">http://github.com/spree/spree</a></li>
+<li>Developing Spree Extension with TDD<br/>
+<a href="http://nebulab.it/en/nebulog/developing-spree-extension-with-tdd">http://nebulab.it/en/nebulog/developing-spree-extension-with-tdd</a></li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Additional resources</h1>
+
+<ul>
+<li>Presentation<br/>
+<a href="http://github.com/mscottford/testing-spree-stores-and-extensions">http://github.com/mscottford/testing-spree-stores-and-extensions</a></li>
+<li>Sample Store code<br/>
+<a href="http://github.com/mscottford/sample-store">http://github.com/mscottford/sample-store</a></li>
+<li>Sample Extension code<br/>
+<a href="http://github.com/mscottford/spree_sample_extension">http://github.com/mscottford/spree_sample_extension</a></li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h1>Contact info</h1>
+          
+          <ul>
+          <li>email: scott@mscottford.com</li>
+          <li>github: mscottford</li>
+          <li>twitter: @mscottford</li>
+          <li>blog: http://mscottford.com</li>
+          </ul>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <section class='slide'>
+        <div class='spacer top'></div>
+        <div class='content'>
+          <h1>Questions?</h1>
+        </div>
+        <div class='spacer bottom'></div>
+      </section>
+    <!-- deck.js navigation extension -->
+    <a class='deck-prev-link' href='#' title='Previous'>&#8592;</a>
+    <a class='deck-next-link' href='#' title='Next'>&#8594;</a>
+    <!-- deck.js hash extension -->
+    <a class='deck-permalink' href='.' title='Permalink to this slide'>#</a>
+    <!-- deck.js status extension -->
+    <p class='deck-status'>
+      <span class='deck-status-current'></span>
+      /
+      <span class='deck-status-total'></span>
+    </p>
+    <!-- jQuery & deck.js -->
+    <script src="deck.js/support/jquery.1.6.4.min.js" type="text/javascript"></script>
+    <script src="deck.js/core/deck.core.js" type="text/javascript"></script>
+    <!-- deck.js extension JS files -->
+    <script src="deck.js/extensions/codemirror/codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/deck.codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/clike/clike.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/clojure/clojure.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/coffeescript/coffeescript.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/css/css.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/diff/diff.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/haskell/haskell.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/lua/lua.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/php/php.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/plsql/plsql.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/python/python.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/r/r.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/rst/rst.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/ruby/ruby.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/scheme/scheme.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/smalltalk/smalltalk.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/sparql/sparql.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/stex/stex.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/velocity/velocity.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/xml/xml.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/xmlpure/xmlpure.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/yaml/yaml.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/goto/deck.goto.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/hash/deck.hash.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/menu/deck.menu.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/navigation/deck.navigation.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/scale/deck.scale.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/status/deck.status.js" type="text/javascript"></script>
+    <!-- your custom JS here, including call to initialize deck.js-codemirror -->
+    <script src="js/testing-spree-store-and-extensions.js" type="text/javascript"></script>
+    <!-- Initialize the deck. -->
+    <script type='text/javascript'>
+      $(function() { $.deck('.slide'); });
+    </script>
+  </body>
+</html>
